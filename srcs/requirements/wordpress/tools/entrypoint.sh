@@ -3,7 +3,7 @@ sleep 5
 wp config create --dbname=${DB_NAME} \
                  --dbuser=${DB_USER} \
                  --dbpass=${DB_PASSWORD} \
-                 --dbhost=mariadb \
+                 --dbhost=mariadb:3306 \
                  --path=${WP_PATH} \
                  --allow-root \
                  --path="/var/www/html/wordpress"
@@ -16,4 +16,4 @@ wp core install --url=${WP_URL} \
                 --allow-root \
                 --path="/var/www/html/wordpress"
 /usr/sbin/php-fpm7.3 --nodaemonize
-exec "$@"
+# exec "$@"

@@ -19,9 +19,7 @@ clean:
 	-@docker rmi $(docker images -q)
 	-@docker volume rm $(docker volume ls -q)
 	-@docker network rm $(docker network ls -q)
-
-fclean: clean
-	@sudo rm -rf $(WP_DIR) $(DB_DIR)
+	-@sudo rm -rf $(WP_DIR) $(DB_DIR)
 
 re: fclean all
 
@@ -34,4 +32,4 @@ $(DB_DIR):
 edit-hosts:
 	@sudo cat /etc/hosts | grep "kohmatsu.42.fr" || sudo echo "127.0.0.1	kohmatsu.42.fr" >> /etc/hosts
 
-.PHONY: all up down stop clean fclean re edit-host
+.PHONY: all up down stop clean re edit-host
