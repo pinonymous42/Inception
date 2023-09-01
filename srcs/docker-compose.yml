@@ -42,13 +42,13 @@ volumes:
     driver: local
     driver_opts:
       type: none
-      device: /Users/kohei/Desktop/wordpress
+      device: /home/kohmatsu/data/wordpress
       o: bind
   mariadb:
     driver: local
     driver_opts:
       type: none
-      device: /Users/kohei/Desktop/mariadb
+      device: /home/kohmatsu/data/mariadb
       o: bind
 networks:
   network:
