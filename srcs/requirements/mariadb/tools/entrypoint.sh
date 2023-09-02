@@ -11,4 +11,4 @@ mysql -u root -p ${DB_ROOT_PASSWORD} < setting.sql
 rm -f setting.sql
 
 mysqld
-exec "$@"
+# exec "$@"

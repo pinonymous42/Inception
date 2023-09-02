@@ -6,10 +6,12 @@ DB_DIR:=/home/kohmatsu/data/mariadb
 all: up
 
 up: edit-hosts $(WP_DIR) $(DB_DIR)
+	docker-compose -f $(DOCKER) build --no-cache
 	docker-compose -f $(DOCKER) up -d
 
 down:
 	docker-compose -f $(DOCKER) down
+	docker volume rm $(docker volume ls -q)
 
 stop:
 	docker-compose -f $(DOCKER) stop
