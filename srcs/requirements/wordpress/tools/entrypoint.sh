@@ -1,5 +1,7 @@
 #!/bin/sh
-sleep 5
+# sleep 5
+echo "clear_env=no" >> /etc/php/7.3/fpm/php-fpm.conf
+echo "listen=wordpress:9000" >> /etc/php/7.3/fpm/php-fpm.conf
 wp config create --dbname=${DB_NAME} \
                  --dbuser=${DB_USER} \
                  --dbpass=${DB_PASSWORD} \

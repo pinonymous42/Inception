@@ -9,7 +9,7 @@ openssl req -newkey rsa:2048 -nodes -x509 -days 3650 \
 
 chmod 755 /var/www/html
 chown www-data:www-data -R /var/www/html ${SSL_CRT_PATH} ${SSL_KEY_PATH}
-#chmod 600 ${SSL_KEY_PATH}
-#chmod 600 ${SSL_CRT_PATH}
+chmod 600 ${SSL_KEY_PATH}
+chmod 600 ${SSL_CRT_PATH}
 nginx -g "daemon off;"
 exec "$@"
