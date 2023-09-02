@@ -1,13 +1,23 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Dockerfile                                         :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: pfrances <pfrances@student.42tokyo.jp>     +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2023/05/26 12:19:53 by pfrances          #+#    #+#              #
+#    Updated: 2023/06/02 12:45:57 by pfrances         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 FROM debian:buster
 
-RUN apt update -y && apt upgrade -y && apt install -y mariadb-server
-RUN mkdir -p /tmp/mariadb
+RUN apt update && apt install mariadb-server -y && apt clean
 
 COPY ./conf/50-server.cnf /etc/mysql/mariadb.conf.d/50-server.cnf
-COPY ./tools/entrypoint.sh /tmp/mariadb/entrypoint.sh
+COPY ./tools/setup_mariadb.sh /tmp/setup_mariadb.sh
 
-RUN chmod +x /tmp/mariadb/entrypoint.sh
-
+RUN chmod +x /tmp/setup_mariadb.sh
 EXPOSE 3306
 
-ENTRYPOINT ["sh", "/tmp/mariadb/entrypoint.sh"]
+ENTRYPOINT ["sh", "/tmp/setup_mariadb.sh"]

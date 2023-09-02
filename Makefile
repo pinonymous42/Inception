@@ -11,7 +11,6 @@ up: edit-hosts $(WP_DIR) $(DB_DIR)
 
 down:
 	docker-compose -f $(DOCKER) down
-	docker volume rm $(docker volume ls -q)
 
 stop:
 	docker-compose -f $(DOCKER) stop
