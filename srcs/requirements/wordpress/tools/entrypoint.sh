@@ -16,4 +16,4 @@ wp core install --url=${WP_URL} \
                 --allow-root \
                 --path="/var/www/html/wordpress"
 /usr/sbin/php-fpm7.3 --nodaemonize
-# exec "$@"
+exec "$@"

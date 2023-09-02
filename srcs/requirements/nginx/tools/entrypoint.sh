@@ -12,4 +12,4 @@ chown www-data:www-data -R /var/www/html ${SSL_CRT_PATH} ${SSL_KEY_PATH}
 #chmod 600 ${SSL_KEY_PATH}
 #chmod 600 ${SSL_CRT_PATH}
 nginx -g "daemon off;"
-# exec "$@"
+exec "$@"
