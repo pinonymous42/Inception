@@ -1,13 +1,13 @@
 #
-#These groups are read by MariaDB server.
-#Use it for options that only the server (but not clients) should see
+# These groups are read by MariaDB server.
+# Use it for options that only the server (but not clients) should see
 #
-#See the examples of server my.cnf files in /usr/share/mysql
+# See the examples of server my.cnf files in /usr/share/mysql
 
-#this is read by the standalone daemon and embedded servers
+# this is read by the standalone daemon and embedded servers
 [server]
 
-#this is only for the mysqld standalone daemon
+# this is only for the mysqld standalone daemon
 [mysqld]
 
 #
@@ -23,9 +23,10 @@ tmpdir                  = /tmp
 lc-messages-dir         = /usr/share/mysql
 #skip-external-locking
 
-#Instead of skip-networking the default is now to listen only on
-#localhost which is more compatible and is not less secure.
-bind-address            = 0.0.0.0
+# Instead of skip-networking the default is now to listen only on
+# localhost which is more compatible and is not less secure.
+#bind ha hitotusika setteidekinai localhost to wordpress kara akusesusitai
+#bind-address            = mariadb #kore aruto wordpress to mariadb kara setuzoku dekin
 
 #
 # * Fine Tuning
