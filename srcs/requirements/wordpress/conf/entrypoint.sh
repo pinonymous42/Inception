@@ -1,4 +1,6 @@
 #!/bin/sh
+
+sleep 5
 wp config create	--path=$WP_PATH \
 					--dbname=$DB_NAME \
 					--dbuser=$DB_USER \
@@ -13,4 +15,4 @@ wp core install --title=$WP_TITLE \
 				--url=$WP_URL \
 				--allow-root
 
-#/usr/sbin/php-fpm7.3 -F
+/usr/sbin/php-fpm7.3 -F

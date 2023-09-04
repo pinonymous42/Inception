@@ -1,5 +1,4 @@
 #!/bin/sh
-set -x
 service mysql start
 
 echo "CREATE DATABASE inception;" > setting.sql
@@ -10,3 +9,5 @@ echo "FLUSH PRIVILEGES;" >> setting.sql
 
 mysql < setting.sql
 kill $(cat /var/run/mysqld/mysqld.pid)
+
+mysqld

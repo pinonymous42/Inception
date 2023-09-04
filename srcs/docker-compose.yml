@@ -41,15 +41,15 @@ volumes:
   wordpress:
     driver: local
     driver_opts:
-        type: none
-        o: bind
-        device: /home/kohmatsu/data/wordpress
+        type: 'none'
+        o: 'bind'
+        device: '/home/kohmatsu/data/wordpress'
   mariadb:
     driver: local
     driver_opts:
-        type: none
-        o: bind
-        device: /home/kohmatsu/data/mariadb
+        type: 'none'
+        o: 'bind'
+        device: '/home/kohmatsu/data/mariadb'
 networks:
   inception:
     driver: bridge
